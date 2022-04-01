@@ -10,7 +10,9 @@
   --header-border-color: #ececec; 
   --portfolio-line-border: #eeeeee;
   --client-color:#afb1b8;
-
+  --work-overlay-color: rgba(47, 48, 58, 0.8);
+  --hero-overlay-color: rgba(47, 48, 58, 0.4);
+  --hero-background-color: #c4c4c4;
   --item-gap: 30px
   
 }
@@ -373,7 +375,58 @@ margin-left: 10px;
   align-items: baseline;
 }
 */
-/* hero*/
+/* hero
+.overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: linear-gradient(
+      to right,
+      var(--hero-overlay-color),
+      var(--hero-overlay-color)
+    ),
+    url(../img/img-hero-bg.jpg);
+  background-color: var(--hero-background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}*/
+/* Модальное окно */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: var(--wite-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--regular-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-close-icon {
+  fill: var(--regular-black-color);
+}
 .section-hero{
   padding-top: 200px;
   padding-bottom: 200px;
@@ -503,6 +556,16 @@ margin-left: var(--item-gap);
 display: block;
 max-width: 100%;
 height: auto;
+}
+.work-overlay{
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--work-overlay-color);
 }
 /*team*/
 .team{
